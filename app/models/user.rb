@@ -6,6 +6,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :pins
+
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :center, presence: true
+  validates :address, presence: true
+
+
+
+
 end
 
 

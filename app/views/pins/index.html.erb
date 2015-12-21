@@ -3,8 +3,15 @@
     <div class="box panel panel-default">
       <%= link_to image_tag(pin.image.url(:medium)), pin %>
       <div class="panel-body">
+        <strong><%= pin.user.name%></strong><br/>
         <%= pin.description %><br/>
-        <strong><%= pin.user.email if pin.user %></strong>
+        <%= pin.user.address%><br/>
+        <%= pin.user.center%><br/>
+        <%= pin.user.phone%><br/>
+        <%= pin.created_at%><br/>
+
+
+
         <% if pin.user == current_user %>
           <div class="actions">
             <%= link_to 'Edit', edit_pin_path(pin) %>
